@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_web/components/appBar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,12 +7,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height,
-      width: size.width,
-      decoration: const BoxDecoration(
+    return Scaffold(
+      body: Container(
+        height: size.height,
+        width: size.width,
+        decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bgr.jpg'), fit: BoxFit.cover)),
+              image: AssetImage('assets/images/bgr.jpg'), fit: BoxFit.cover),
+        ),
+        child: Column(
+          children: [CustomAppBar()],
+        ),
+      ),
     );
   }
 }
