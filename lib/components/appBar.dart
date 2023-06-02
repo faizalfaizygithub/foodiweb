@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_web/Screens/constant.dart';
+import 'package:food_web/components/defaultButton.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -7,7 +8,6 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
       width: double.infinity,
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(20),
@@ -55,6 +55,10 @@ class CustomAppBar extends StatelessWidget {
           title: 'login',
           press: () {},
         ),
+        DefaultaButton(
+          text: 'Get Started',
+          press: () {},
+        )
       ]),
     );
   }

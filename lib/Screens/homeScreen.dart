@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_web/components/appBar.dart';
+import 'package:food_web/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,10 +14,17 @@ class HomeScreen extends StatelessWidget {
         width: size.width,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/bgr.jpg'), fit: BoxFit.cover),
+              image: AssetImage('assets/images/bgr2.jpg'), fit: BoxFit.cover),
         ),
         child: Column(
-          children: [CustomAppBar()],
+          children: const [
+            CustomAppBar(),
+            Spacer(),
+            Body(),
+            Spacer(
+              flex: 2,
+            ),
+          ],
         ),
       ),
     );
