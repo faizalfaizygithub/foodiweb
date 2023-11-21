@@ -10,20 +10,19 @@ class HomeScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        height: size.height,
-        width: size.width,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/images/bgr2.jpg'), fit: BoxFit.cover),
         ),
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             CustomAppBar(),
-            Spacer(),
-            Body(),
             Spacer(
               flex: 2,
             ),
+            Body(),
           ],
         ),
       ),
