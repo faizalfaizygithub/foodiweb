@@ -28,7 +28,7 @@ class DefaultaButton extends StatelessWidget {
           onPressed: press,
           child: Text(
             text.toUpperCase(),
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
       ),

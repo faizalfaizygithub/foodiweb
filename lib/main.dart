@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_web/view/Screens/ResponsiveLayout/desktop_layout.dart';
 import 'package:food_web/view/Screens/ResponsiveLayout/mobile_layout.dart';
-import 'package:food_web/view/Screens/components/ResponsiveLayout/responsive_layout.dart';
+import 'package:food_web/view/Screens/ResponsiveLayout/responsive_layout.dart';
 import 'package:food_web/view/components/constant.dart';
 
 void main() {

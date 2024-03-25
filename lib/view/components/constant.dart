@@ -5,11 +5,13 @@ const kTextColor = Color(0xff241424);
 const kDarkButton = Color(0xff372930);
 
 var body = Container(
+  height: double.infinity,
+  width: double.infinity,
   decoration: const BoxDecoration(
     image: DecorationImage(
         image: AssetImage('assets/images/bgr2.jpg'), fit: BoxFit.cover),
   ),
-  child: Column(children: [
+  child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
     Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
       child: Text('Burger'.toUpperCase(),

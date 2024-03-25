@@ -17,8 +17,8 @@ class MenuItems extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Text(
           title.toUpperCase(),
-          style: const TextStyle(
-              color: Colors.white70, fontWeight: FontWeight.bold),
+          style:
+              const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
     );

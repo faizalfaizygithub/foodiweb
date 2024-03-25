@@ -10,31 +10,17 @@ class DesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Foodi'.toUpperCase(),
-          style: const TextStyle(
-              fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
-        ),
         leading: Image.asset(
           'assets/images/logo.jpg',
           height: 50,
           alignment: Alignment.topCenter,
         ),
+        title: Text(
+          'Foodi'.toUpperCase(),
+          style: const TextStyle(
+              fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold),
+        ),
         actions: [
-          Image.asset(
-            'assets/images/logo.jpg',
-            height: 50,
-            alignment: Alignment.topCenter,
-          ),
-          const SizedBox(
-            width: 2,
-          ),
-          Text(
-            'Foodi'.toUpperCase(),
-            style: const TextStyle(
-                fontSize: 22, color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          const Spacer(),
           MenuItems(
             title: 'Home',
             press: () {},
@@ -59,6 +45,9 @@ class DesktopLayout extends StatelessWidget {
             text: 'Get Started',
             press: () {},
           ),
+          SizedBox(
+            width: 10,
+          )
         ],
       ),
       body: body,
