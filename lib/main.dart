@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:food_web/Screens/constant.dart';
-import 'package:food_web/Screens/homeScreen.dart';
+import 'package:food_web/view/Screens/ResponsiveLayout/desktop_layout.dart';
+import 'package:food_web/view/Screens/ResponsiveLayout/mobile_layout.dart';
+import 'package:food_web/view/Screens/components/ResponsiveLayout/responsive_layout.dart';
+import 'package:food_web/view/components/constant.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
           primaryColor: kPrimaryColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomeScreen());
+        home: const ResponsiveLayout(
+            mobileLayout: MobileLayout(), desktopLayout: DesktopLayout()));
   }
 }

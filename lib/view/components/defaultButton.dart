@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Screens/constant.dart';
+import 'constant.dart';
 
 class DefaultaButton extends StatelessWidget {
   final String text;
