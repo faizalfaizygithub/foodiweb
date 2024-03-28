@@ -3,19 +3,19 @@ import 'package:food_web/controller/productController.dart';
 import 'package:food_web/view/components/assets.dart';
 import 'package:food_web/view/components/carousel.dart';
 import 'package:food_web/view/components/constant.dart';
+import 'package:food_web/view/components/defaultButton.dart';
 import 'package:food_web/view/components/menu_item.dart';
 import 'package:get/get.dart';
 
-class MobileLayout extends StatefulWidget {
-  const MobileLayout({super.key});
+class TabLayout extends StatefulWidget {
+  const TabLayout({super.key});
 
   @override
-  State<MobileLayout> createState() => _MobileLayoutState();
+  State<TabLayout> createState() => _TabLayoutState();
 }
 
-class _MobileLayoutState extends State<MobileLayout> {
+class _TabLayoutState extends State<TabLayout> {
   final product = Get.put(ProductController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +30,35 @@ class _MobileLayoutState extends State<MobileLayout> {
           style: const TextStyle(
               fontSize: 22, color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          MenuItems(
+            title: 'Home',
+            press: () {},
+          ),
+          MenuItems(
+            title: 'About',
+            press: () {},
+          ),
+          MenuItems(
+            title: 'Pricing',
+            press: () {},
+          ),
+          MenuItems(
+            title: 'contact',
+            press: () {},
+          ),
+          MenuItems(
+            title: 'login',
+            press: () {},
+          ),
+          DefaultaButton(
+            text: 'Get Started',
+            press: () {},
+          ),
+          SizedBox(
+            width: 10,
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -49,13 +78,13 @@ class _MobileLayoutState extends State<MobileLayout> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height,
+              height: 500,
               width: MediaQuery.of(context).size.width,
               color: Colors.grey.shade200,
               child: GridView.builder(
                   itemCount: product.listProduct.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                    crossAxisCount: 3,
                   ),
                   itemBuilder: (context, index) {
                     final burgerlist = product.listProduct[index];
@@ -66,33 +95,40 @@ class _MobileLayoutState extends State<MobileLayout> {
                             color: const Color.fromARGB(255, 27, 37, 46),
                             borderRadius: BorderRadius.circular(15)),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             AspectRatio(
                                 aspectRatio: 2,
                                 child: Image.asset(burgerlist.imagePath)),
                             const SizedBox(
-                              height: 20,
+                              height: 5,
                             ),
                             Text(
                               burgerlist.name,
                               style: const TextStyle(color: Colors.white),
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 5,
                             ),
-                            Container(
-                              height: 40,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.white70),
-                              alignment: Alignment.center,
-                              child: Text(
-                                "₹ " + burgerlist.price.toString(),
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    color: Color.fromARGB(255, 27, 37, 46),
-                                    fontWeight: FontWeight.bold),
+                            InkWell(
+                              onTap: () {},
+                              focusColor: Colors.red,
+                              overlayColor:
+                                  MaterialStateProperty.all(Colors.black),
+                              child: Container(
+                                height: 30,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white70),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "₹ " + burgerlist.price.toString(),
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      color: Color.fromARGB(255, 27, 37, 46),
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ],
@@ -104,44 +140,6 @@ class _MobileLayoutState extends State<MobileLayout> {
           ],
         ),
       ),
-      endDrawer: Container(
-        height: 300,
-        child: Drawer(
-          backgroundColor: Colors.white60,
-          width: 200,
-          child: _drawerList(context),
-        ),
-      ),
     );
   }
-}
-
-_drawerList(BuildContext context) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      MenuItems(
-        title: 'Home',
-        press: () {
-          Navigator.pop(context);
-        },
-      ),
-      MenuItems(
-        title: 'About',
-        press: () {},
-      ),
-      MenuItems(
-        title: 'Pricing',
-        press: () {},
-      ),
-      MenuItems(
-        title: 'contact',
-        press: () {},
-      ),
-      MenuItems(
-        title: 'login',
-        press: () {},
-      ),
-    ],
-  );
 }

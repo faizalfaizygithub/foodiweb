@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const kPrimaryColor = Color(0xffffc200);
 const kTextColor = Color(0xff241424);
 const kDarkButton = Color(0xff372930);
+const bgColor = Color.fromARGB(255, 27, 37, 46);
 
 var body = Container(
   height: double.infinity,
@@ -11,12 +12,15 @@ var body = Container(
     image: DecorationImage(
         image: AssetImage('assets/images/bgr2.jpg'), fit: BoxFit.cover),
   ),
-  child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+  child: Column(children: [
     Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+      padding: const EdgeInsets.only(top: 60, left: 50, right: 20),
       child: Text('Burger'.toUpperCase(),
           style: const TextStyle(
               fontSize: 80, fontWeight: FontWeight.bold, color: Colors.white)),
+    ),
+    const SizedBox(
+      height: 40,
     ),
     const Text(
       'It’s just a piece of meat between buns and other stuff, but it makes a lot of people happy.',
@@ -26,7 +30,7 @@ var body = Container(
       ),
     ),
     const SizedBox(
-      height: 10,
+      height: 210,
     ),
     FittedBox(
       child: Container(

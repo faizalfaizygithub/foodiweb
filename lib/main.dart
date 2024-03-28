@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:food_web/view/Screens/ResponsiveLayout/desktop_layout.dart';
 import 'package:food_web/view/Screens/ResponsiveLayout/mobile_layout.dart';
 import 'package:food_web/view/Screens/ResponsiveLayout/responsive_layout.dart';
+import 'package:food_web/view/Screens/ResponsiveLayout/tab_layout.dart';
 import 'package:food_web/view/components/constant.dart';
+import 'package:get/get.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter web',
         theme: ThemeData(
@@ -22,6 +22,8 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: const ResponsiveLayout(
-            mobileLayout: MobileLayout(), desktopLayout: DesktopLayout()));
+            mobileLayout: MobileLayout(),
+            tablayout: TabLayout(),
+            desktopLayout: DesktopLayout()));
   }
 }
